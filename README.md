@@ -25,3 +25,26 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Start Firebase emulators
+
+`firebase use staging`
+`firebase emulators:start`
+
+## Kill processes on ports
+
+`kill -9 $(lsof -ti:8080,8085,9000)`
+
+## Deploying to Firebase
+
+Cloud Build [documentation](https://cloud.google.com/build/docs/deploying-builds/deploy-firebase)
+
+## Config environment
+
+- [Environment variables](https://firebase.google.com/docs/functions/config-env#env-variables)
+- [Managing secrets](https://firebase.google.com/docs/functions/config-env#managing_secrets)
+
+## Missing necessary permission iam.serviceAccounts.actAs for cloud-functions-mixer on the service account
+
+You can fix that by running
+`gcloud iam service-accounts add-iam-policy-binding <$PROJECT_ID>@appspot.gserviceaccount.com --member=serviceAccount:<$SOME_ID_OF_CLOUDBUILD_SA>@cloudbuild.gserviceaccount.com --role=roles/iam.serviceAccountUser`
