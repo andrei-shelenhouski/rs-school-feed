@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "rs-school-feed-stage",
+    "production": "rs-school-feed"
+  }
+}
